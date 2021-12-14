@@ -551,7 +551,7 @@ const reservedNewlineWords = [
 
 // For reference: https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/db2/rbafzintro.htm
 export default class Db2Formatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -565,6 +565,7 @@ export default class Db2Formatter extends Formatter {
       lineCommentTypes: ['--'],
       specialWordChars: ['#', '@'],
       operators: ['**', '!=', '!>', '!>', '||'],
+      ...customConfig,
     });
   }
 }

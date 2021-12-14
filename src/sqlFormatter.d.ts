@@ -14,6 +14,20 @@ export interface FormatOptions {
   indent?: string;
   uppercase?: boolean;
   linesBetweenQueries?: number;
+  customConfig?: {
+    reservedWords?: string[];
+    reservedTopLevelWords?: string[];
+    reservedNewlineWords?: string[];
+    reservedTopLevelWordsNoIndent?: string[];
+    stringTypes?: string[];
+    openParens?: string[];
+    closeParens?: string[];
+    indexedPlaceholderTypes?: string[];
+    namedPlaceholderTypes?: string[];
+    lineCommentTypes?: string[];
+    specialWordChars?: string[];
+    operator?: string[];
+  };
 }
 
 export function format(sql: string, options?: FormatOptions): string;

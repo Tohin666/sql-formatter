@@ -366,7 +366,7 @@ const reservedNewlineWords = [
 ];
 
 export default class RedshiftFormatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -379,6 +379,7 @@ export default class RedshiftFormatter extends Formatter {
       namedPlaceholderTypes: ['@', '#', '$'],
       lineCommentTypes: ['--'],
       operators: ['|/', '||/', '<<', '>>', '!=', '||'],
+      ...customConfig,
     });
   }
 }

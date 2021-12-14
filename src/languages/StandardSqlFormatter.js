@@ -359,7 +359,7 @@ const reservedNewlineWords = [
 ];
 
 export default class StandardSqlFormatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -371,6 +371,7 @@ export default class StandardSqlFormatter extends Formatter {
       indexedPlaceholderTypes: ['?'],
       namedPlaceholderTypes: [],
       lineCommentTypes: ['--'],
+      ...customConfig,
     });
   }
 }

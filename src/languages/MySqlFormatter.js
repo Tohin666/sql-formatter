@@ -310,7 +310,7 @@ const reservedNewlineWords = [
 ];
 
 export default class MySqlFormatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -324,6 +324,7 @@ export default class MySqlFormatter extends Formatter {
       lineCommentTypes: ['--', '#'],
       specialWordChars: ['@'],
       operators: [':=', '<<', '>>', '!=', '<>', '<=>', '&&', '||', '->', '->>'],
+      ...customConfig,
     });
   }
 }

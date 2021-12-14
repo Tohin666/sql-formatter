@@ -233,7 +233,7 @@ const reservedNewlineWords = [
 ];
 
 export default class TSqlFormatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -263,6 +263,7 @@ export default class TSqlFormatter extends Formatter {
         '^=',
         '::',
       ],
+      ...customConfig,
       // TODO: Support for money constants
     });
   }

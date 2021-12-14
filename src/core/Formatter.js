@@ -13,6 +13,7 @@ export default class Formatter {
    *  @param {Boolean} cfg.uppercase
    *  @param {Integer} cfg.linesBetweenQueries
    *  @param {Object} cfg.params
+   *  @param {Object} cfg.customConfig
    */
   constructor(cfg) {
     this.cfg = cfg;
@@ -53,7 +54,7 @@ export default class Formatter {
    * @return {String} formatted query
    */
   format(query) {
-    this.tokens = this.tokenizer().tokenize(query);
+    this.tokens = this.tokenizer(this.cfg.customConfig).tokenize(query);
     const formattedQuery = this.getFormattedQueryFromTokens();
 
     return formattedQuery.trim();

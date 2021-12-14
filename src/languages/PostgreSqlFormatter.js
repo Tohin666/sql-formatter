@@ -501,7 +501,7 @@ const reservedNewlineWords = [
 ];
 
 export default class PostgreSqlFormatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -531,6 +531,7 @@ export default class PostgreSqlFormatter extends Formatter {
         '!~',
         '!!',
       ],
+      ...customConfig,
     });
   }
 }

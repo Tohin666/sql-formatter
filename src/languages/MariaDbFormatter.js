@@ -298,7 +298,7 @@ const reservedNewlineWords = [
 
 // For reference: https://mariadb.com/kb/en/sql-statements-structure/
 export default class MariaDbFormatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -312,6 +312,7 @@ export default class MariaDbFormatter extends Formatter {
       lineCommentTypes: ['--', '#'],
       specialWordChars: ['@'],
       operators: [':=', '<<', '>>', '!=', '<>', '<=>', '&&', '||'],
+      ...customConfig,
     });
   }
 }

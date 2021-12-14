@@ -415,7 +415,7 @@ const reservedNewlineWords = [
 ];
 
 export default class PlSqlFormatter extends Formatter {
-  tokenizer() {
+  tokenizer(customConfig) {
     return new Tokenizer({
       reservedWords,
       reservedTopLevelWords,
@@ -429,6 +429,7 @@ export default class PlSqlFormatter extends Formatter {
       lineCommentTypes: ['--'],
       specialWordChars: ['_', '$', '#', '.', '@'],
       operators: ['||', '**', '!=', ':='],
+      ...customConfig,
     });
   }
 
