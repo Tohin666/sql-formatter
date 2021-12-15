@@ -1,6 +1,6 @@
 {
-  "name": "sql-formatter-clickhouse",
-  "version": "1.0.0",
+  "name": "sql-formatter-extended-options",
+  "version": "1.0.1",
   "description": "Format whitespace in a SQL query to make it more readable",
   "license": "MIT",
   "main": "lib/sqlFormatter.js",
@@ -21,8 +21,7 @@
     "postgresql",
     "pl/sql",
     "transact-sql",
-    "db2",
-    "clickhouse"
+    "db2"
   ],
   "contributors": [
     "Adrien Pyke <adpyke@gmail.com>",

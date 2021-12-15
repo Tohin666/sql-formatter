@@ -1,3 +1,26 @@
+> This is fork of [zeroturnaround/sql-formatter](https://zeroturnaround.github.io/sql-formatter/) with extended options:
+
+```
+language
+params
+indent
+uppercase
+linesBetweenQueries
+customConfig:
+  reservedWords
+  reservedTopLevelWords
+  reservedNewlineWords
+  reservedTopLevelWordsNoIndent
+  stringTypes
+  openParens
+  closeParens
+  indexedPlaceholderTypes
+  namedPlaceholderTypes
+  lineCommentTypes
+  specialWordChars
+  operator
+```
+
 # SQL Formatter [![NPM version](https://img.shields.io/npm/v/sql-formatter.svg)](https://npmjs.com/package/sql-formatter) [![Build Status](https://travis-ci.org/zeroturnaround/sql-formatter.svg?branch=master)](https://travis-ci.org/zeroturnaround/sql-formatter) [![Coverage Status](https://coveralls.io/repos/github/zeroturnaround/sql-formatter/badge.svg?branch=master)](https://coveralls.io/github/zeroturnaround/sql-formatter?branch=master)
 
 **SQL Formatter** is a JavaScript library for pretty-printing SQL queries.
